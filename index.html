@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OverlayPlus</title>
+<title>LayoutPlus</title>
 <style>
     body, html {
         margin: 0;
         padding: 0;
         height: 100%;
-        background-color: #000000; /* 변경된 부분: 배경색을 검은색(#000000)으로 설정 */
+        background-color: black
     }
     .container {
         height: 100%;
@@ -75,20 +75,22 @@
                 <iframe class="iframe" src="https://chzzk-api.ddutto.com/chat/cbf4b8de0ce38a7c8c8c37e4eda54889?setting=darkmode,left,font:TheJamsil,font-weight:600,orig-color,bg-opaque:1,font-size:58px,no-nick,no-badge,remove-anim2:9"></iframe> 
             </div>
         </div>
+</div>
         <div class="footer">
-            <p>
-                <script>
-                    var now = new Date();
-                    var days = ['일', '월', '화', '수', '목', '금', '토'];
-                    var day = days[now.getDay()];
-                    var date = now.getDate();
-                    var month = now.getMonth() + 1;
-                    var hours = now.getHours();
-                    var minutes = now.getMinutes();
-                    document.write(month + '월 ' + date + '일(' + day + ') ' + (hours < 10 ? '0' : '') + hours + '시 ' + (minutes < 10 ? '0' : '') + minutes + '분');
-                </script>
-            </p>
-        </div>
+    <p>
+        <script>
+            var now = new Date();
+            var days = ['일', '월', '화', '수', '목', '금', '토'];
+            var day = days[now.getDay()];
+            var date = now.getDate();
+            var month = now.getMonth() + 1;
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            document.write(month + '월 ' + date + '일(' + day + ') ' + (hours < 10 ? '0' : '') + hours + '시 ' + (minutes < 10 ? '0' : '') + minutes + '분');
+        </script>
+    </p>
+</div>
+
     </div>
 </body>
 </html>
