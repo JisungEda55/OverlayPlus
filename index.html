@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LayoutPlus</title>
+<title>OverlayPlus</title>
 <style>
     body, html {
         margin: 0;
         padding: 0;
         height: 100%;
-        background-color: black
+        background-color: #000000; /* 변경된 부분: 배경색을 검은색(#000000)으로 설정 */
     }
     .container {
         height: 100%;
@@ -46,7 +46,20 @@
         justify-content: center;
         align-items: center;
         font-weight: bold;
-        color: #FFF
+        color: #FFF;
+        /* 변경된 부분: 폰트 설정을 @font-face에서 직접 지정 */
+        @font-face {
+            font-family: 'TheJamsil';
+            font-weight: 600; /* 변경된 부분: 폰트 가중치 설정 */
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/TheJamsil/TheJamsil-Medium.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/TheJamsil/TheJamsil-Medium.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/TheJamsil/TheJamsil-Medium.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/TheJamsil/TheJamsil-Medium.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/TheJamsil/TheJamsil-Medium.ttf') format("truetype");
+            font-display: swap;
+        }
+        font-family: 'TheJamsil'; /* 변경된 부분: 폰트 지정 */
     }
 </style>
 </head>
@@ -62,22 +75,20 @@
                 <iframe class="iframe" src="https://chzzk-api.ddutto.com/chat/cbf4b8de0ce38a7c8c8c37e4eda54889?setting=darkmode,left,font:TheJamsil,font-weight:600,orig-color,bg-opaque:1,font-size:58px,no-nick,no-badge,remove-anim2:9"></iframe> 
             </div>
         </div>
-</div>
         <div class="footer">
-    <p>
-        <script>
-            var now = new Date();
-            var days = ['일', '월', '화', '수', '목', '금', '토'];
-            var day = days[now.getDay()];
-            var date = now.getDate();
-            var month = now.getMonth() + 1;
-            var hours = now.getHours();
-            var minutes = now.getMinutes();
-            document.write(month + '월 ' + date + '일(' + day + ') ' + (hours < 10 ? '0' : '') + hours + '시 ' + (minutes < 10 ? '0' : '') + minutes + '분');
-        </script>
-    </p>
-</div>
-
+            <p>
+                <script>
+                    var now = new Date();
+                    var days = ['일', '월', '화', '수', '목', '금', '토'];
+                    var day = days[now.getDay()];
+                    var date = now.getDate();
+                    var month = now.getMonth() + 1;
+                    var hours = now.getHours();
+                    var minutes = now.getMinutes();
+                    document.write(month + '월 ' + date + '일(' + day + ') ' + (hours < 10 ? '0' : '') + hours + '시 ' + (minutes < 10 ? '0' : '') + minutes + '분');
+                </script>
+            </p>
+        </div>
     </div>
 </body>
 </html>
