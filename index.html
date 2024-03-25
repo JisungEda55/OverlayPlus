@@ -38,21 +38,45 @@
         height: 100%;
         border: none;
     }
+    .footer {
+        flex: 1;
+        background-color: #000000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        color: #FFF
+    }
 </style>
 </head>
 <body>
     <div class="container">
         <div class="top">
             <div class="iframe-container">
-                <iframe class="iframe" src="https://www.youtube.com/embed/7X3cQYbcufQ?si=3GZIahoO_DPSvGwh"></iframe> //Input Your Donation Overlay URL//
+                <iframe class="iframe" src="https://www.youtube.com/embed/7X3cQYbcufQ?si=3GZIahoO_DPSvGwh"></iframe>
             </div>
         </div>
         <div class="bottom">
             <div class="iframe-container">
                 <iframe class="iframe" src="https://chzzk-api.ddutto.com/chat/cbf4b8de0ce38a7c8c8c37e4eda54889?setting=darkmode,left,font:TheJamsil,font-weight:600,orig-color,bg-opaque:1,font-size:58px,no-nick,no-badge,remove-anim2:9"></iframe> 
-                //Input Your Chat Overlay URL//
             </div>
         </div>
+</div>
+        <div class="footer">
+    <p>
+        <script>
+            var now = new Date();
+            var days = ['일', '월', '화', '수', '목', '금', '토'];
+            var day = days[now.getDay()];
+            var date = now.getDate();
+            var month = now.getMonth() + 1;
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            document.write(month + '월 ' + date + '일(' + day + ') ' + (hours < 10 ? '0' : '') + hours + '시 ' + (minutes < 10 ? '0' : '') + minutes + '분');
+        </script>
+    </p>
+</div>
+
     </div>
 </body>
 </html>
