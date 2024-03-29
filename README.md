@@ -1,5 +1,5 @@
 # OverlayPlus 
-[젤다][https://jisungeda55.github.io/overlayplus/]
+[젤다](https://jisungeda55.github.io/overlayplus/)
 
 ## OverlayPlus는 스트리머, BJ, 유튜버 등의 콘텐츠 크리에이터가 야외 방송을 진행하거나 채팅에 간편하게 접근하기를 원하는 분들을 위한 서비스입니다.
 
