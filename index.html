@@ -39,36 +39,55 @@
         height: 100%;
         border: none;
     }
-    .footer { flex: 1; 
-    background-color: #000000; 
-    height: 12px; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    font-weight: bold; 
-    color: #FFF; 
-    text-align: 
-    center; /* 텍스트를 수평 가운데 정렬 */ 
-    line-height: 14px; /* 텍스트를 수직 가운데 정렬 */ }
-        /* 변경된 부분: 폰트 설정을 @font-face에서 직접 지정 */
-        @font-face {
-    font-family: 'NanumSquareNeo';
-    font-weight: 800;
-    font-style: normal;
-    src: url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-dEb.eot');
-    src: url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-dEb.eot?#iefix') format('embedded-opentype'),
-         url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-dEb.woff2') format('woff2'),
-         url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-dEb.woff') format('woff'),
-         url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-dEb.ttf') format("truetype");
-    font-display: swap;
-} 
+    .footer { 
+        flex: 1; 
+        background-color: #000000; 
+        height: 12px; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        font-weight: bold; 
+        color: #FFF; 
+        text-align: center; 
+        line-height: 14px; 
+    }
+    @font-face {
+        font-family: 'NanumSquareNeo';
+        font-weight: 800;
+        font-style: normal;
+        src: url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-dEb.eot');
+        src: url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-dEb.eot?#iefix') format('embedded-opentype'),
+             url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-dEb.woff2') format('woff2'),
+             url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-dEb.woff') format('woff'),
+             url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-dEb.ttf') format("truetype");
+        font-display: swap;
+    } 
+    /* 추가된 부분: 모달 스타일 */
+    .modal {
+        display: none; /* 모달 초기에는 숨김 상태 */
+        position: fixed; /* 고정 위치 */
+        z-index: 1; /* 다른 요소들보다 위에 표시 */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto; /* 스크롤 가능하도록 설정 */
+        background-color: rgba(0,0,0,0.5); /* 배경 투명도 조절 */
+    }
+    .modal-content {
+        background-color: #fefefe; /* 모달 내용 배경색 */
+        margin: 15% auto; /* 중앙 정렬 */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%; /* 모달의 너비 조절 */
+    }
 </style>
 </head>
 <body>
     <div class="container">
         <div class="top">
             <div class="iframe-container">
-                <iframe class="iframe" src="https://www.samsung.com/sec"></iframe> /* Add Ur Donai Url */
+                <iframe class="iframe" src="https://vod.afreecatv.com/player/118947495/embed?showChat=false&autoPlay=true&mutePlay=true"></iframe> <!-- Add Your Domain Url -->
             </div>
         </div>
         <div class="bottom">
@@ -76,22 +95,35 @@
                 <iframe class="iframe" src="https://chzzk-api.ddutto.com/chat/17aa057a8248b53affe30512a91481f5?setting=darkmode,left,font:TheJamsil,font-weight:800,orig-color,bg-opaque:1,font-size:64px,no-nick,no-badge,remove-anim2:50,no-anim,scroll"></iframe> 
             </div>
         </div>
-</div>
         <div class="footer">
-    <p>
-        <script>
-            var now = new Date();
-            var days = ['일', '월', '화', '수', '목', '금', '토'];
-            var day = days[now.getDay()];
-            var date = now.getDate();
-            var month = now.getMonth() + 1;
-            var hours = now.getHours();
-            var minutes = now.getMinutes();
-            document.write(month + '월 ' + date + '일(' + day + ') ' + (hours < 10 ? '0' : '') + hours + '시 ' + (minutes < 10 ? '0' : '') + minutes + '분');
-        </script>
-    </p>
-</div>
-
+            <p>
+                <script>
+                    var now = new Date();
+                    var days = ['일', '월', '화', '수', '목', '금', '토'];
+                    var day = days[now.getDay()];
+                    var date = now.getDate();
+                    var month = now.getMonth() + 1;
+                    var hours = now.getHours();
+                    var minutes = now.getMinutes();
+                    document.write(month + '월 ' + date + '일(' + day + ') ' + (hours < 10 ? '0' : '') + hours + '시 ' + (minutes < 10 ? '0' : '') + minutes + '분');
+                </script>
+            </p>
+        </div>
     </div>
+
+    <!-- 추가된 부분: 모달 내용 -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span onclick="document.getElementById('myModal').style.display='none'" style="float: right; cursor: pointer;">&times;</span>
+            <p>이 페이지는 Demo 페이지입니다. 임시로 상단에는 영상을 하단에는 치지직 김도님의 채팅창을 배치해뒀습니다. 소스코드를 수정해서 사용해주세요! :D</p>
+        </div>
+    </div>
+
+    <!-- 추가된 부분: 페이지 로드 후 모달 표시 -->
+    <script>
+        window.onload = function() {
+            document.getElementById('myModal').style.display = 'block';
+        };
+    </script>
 </body>
 </html>
