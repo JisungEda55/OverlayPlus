@@ -67,12 +67,12 @@
     <div class="container">
         <div class="top">
             <div class="iframe-container">
-                <iframe class="iframe" src="https://vod.afreecatv.com/player/118947495/embed?showChat=false&autoPlay=true&mutePlay=true"></iframe>
+                <iframe class="iframe" src="https://www.youtube.com/embed/GpyJ7oMAU3w?autoplay=1&vq=hd1080"></iframe>
             </div>
         </div>
         <div class="bottom">
             <div class="iframe-container">
-                <iframe class="iframe" src="https://chzzk-api.ddutto.com/chat/80b36a0ae8e887e893ce0014dbfece4a?setting=darkmode,left,font:TheJamsil,font-weight:800,orig-color,bg-opaque:1,font-size:64px,no-nick,no-badge,remove-anim2:50,no-anim,scroll"></iframe>
+                <iframe class="iframe" src="https://chzzk-api.ddutto.com/chat/17aa057a8248b53affe30512a91481f5?setting=darkmode,left,font:TheJamsil,font-weight:800,orig-color,bg-opaque:1,font-size:64px,no-nick,no-badge,remove-anim2:50,no-anim,scroll"></iframe>
             </div>
         </div>
         <div class="footer">
@@ -90,8 +90,8 @@
             var minutes = now.getMinutes();
             document.getElementById('current-time').textContent = month + '월 ' + date + '일(' + day + ') ' + (hours < 10 ? '0' : '') + hours + '시 ' + (minutes < 10 ? '0' : '') + minutes + '분';
         }
-        updateTime(); // Update(Reset)
-        setInterval(updateTime, 60000); // Update every 60s
+        updateTime(); // 초기화
+        setInterval(updateTime, 60000); // 1분마다 업데이트
     </script>
 </body>
 </html>
